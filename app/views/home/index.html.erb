@@ -1,1 +1,26 @@
-<h1> Galpões & Estoque </h1>
+<article>
+  <header>
+    <h1> Galpões & Estoque </h1>
+
+    <% if flash.notice %>
+      <p> <%= flash.notice %> </p>
+    <% end %>
+  </header>
+
+  <main>
+    <% @warehouses.each do |wh| %>
+      <p>
+        </strong> <%= wh.name %> </strong>
+      </p>
+      <p>
+        Código: <%= wh.code %>
+      </p>
+      <p>
+        Área: <%= wh.area %> metros quadrados
+      </p>
+      <p>
+        Cidade: <%= wh.city %>
+      </p>
+    <% end %>
+  </main>
+</article>
