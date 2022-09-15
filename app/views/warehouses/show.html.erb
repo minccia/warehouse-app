@@ -1,0 +1,30 @@
+<article>
+  <header>
+    <%= link_to 'Início', root_path %> 
+    <p> Informações do Galpão: </p>
+  </header>
+
+  <main>
+    <p>
+      <%= @wh.name %>
+    </p>
+    <p>
+      Código: <%= @wh.code %>
+    </p>
+    <p>
+      Área: <%= @wh.area %> metros quadrados
+    </p>
+    <p>
+      Cidade: <%= @wh.city %>
+    </p>
+    <p>
+      Endereço: <%= @wh.adress %>
+    </p>
+    <p>
+      CEP: <%= @wh.zip_code %>
+    </p>
+    <p>
+      <%= @wh.description %>
+    </p>
+  </main>
+</article>

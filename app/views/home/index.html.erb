@@ -10,7 +10,7 @@
   <main>
     <% @warehouses.each do |wh| %>
       <p>
-        </strong> <%= wh.name %> </strong>
+         <%= link_to "#{wh.name}", warehouse_path(wh.id) %> 
       </p>
       <p>
         Código: <%= wh.code %>
