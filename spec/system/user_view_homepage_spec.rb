@@ -13,7 +13,7 @@ describe 'Usuário visita a página inicial' do
                   code:        'XLR',
                   area:        100_000,
                   city:        'Guarulhos',
-                  adress:      'Rodovia Hélio Smidt, s/n, Cumbica',
+                  address:      'Rodovia Hélio Smidt, s/n, Cumbica',
                   zip_code:    '07190-100',
                   description: 'É o maior galpão do Brasil!'
                 )
@@ -23,7 +23,7 @@ describe 'Usuário visita a página inicial' do
                   code:        'ZNT',
                   area:        80_000,
                   city:        'Maceió',
-                  adress:      'Rodovia BR 104, Km 91, Tabuleiro do Pinto',
+                  address:      'Rodovia BR 104, Km 91, Tabuleiro do Pinto',
                   zip_code:    '57100-971',
                   description: 'Destinado para cargas internacionais'
                 )

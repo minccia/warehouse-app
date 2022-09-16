@@ -7,7 +7,7 @@ describe 'Usuário vê detalhes de um galpão' do
         code:        'XLR',
         area:        100_000,
         city:        'Guarulhos',
-        adress:      'Rodovia Hélio Smidt, s/n, Cumbica',
+        address:      'Rodovia Hélio Smidt, s/n, Cumbica',
         zip_code:    '07190-100',
         description: 'É o maior galpão do Brasil!'
       )
@@ -30,7 +30,7 @@ describe 'Usuário vê detalhes de um galpão' do
       code:        'XLR',
       area:        100_000,
       city:        'Guarulhos',
-      adress:      'Rodovia Hélio Smidt, s/n, Cumbica',
+      address:      'Rodovia Hélio Smidt, s/n, Cumbica',
       zip_code:    '07190-100',
       description: 'É o maior galpão do Brasil!'
     )
