@@ -5,26 +5,24 @@
   </header>
 
   <main>
-    <p>
-      <%= @wh.name %>
-    </p>
-    <p>
-      Código: <%= @wh.code %>
-    </p>
-    <p>
-      Área: <%= @wh.area %> metros quadrados
-    </p>
-    <p>
-      Cidade: <%= @wh.city %>
-    </p>
-    <p>
-      Endereço: <%= @wh.address %>
-    </p>
-    <p>
-      CEP: <%= @wh.zip_code %>
-    </p>
-    <p>
-      <%= @wh.description %>
-    </p>
+      <h3> <%= @wh.name %> </h3>
+      <dl>
+        <dt> Código: </dt>
+        <dd> <%= @wh.code %> </dd>
+
+        <dt> Área: </dt> 
+        <dd> <%= @wh.area %> metros quadrados </dd>
+
+        <dt> Cidade: </dt>
+        <dd> <%= @wh.city %> </dd>
+
+        <dt> Endereço: </dt>
+        <dd> <%= @wh.address %> </dd>
+
+        <dt> CEP: </dt>
+        <dd> <%= @wh.zip_code %> </dd>
+
+        <p> <%= @wh.description %> </p>
+      </dl>
   </main>
 </article>
