@@ -1,0 +1,40 @@
+<article>
+  <header>
+    <h1> New Warehouse </h1>
+  </header>
+
+  <main>
+    <%= form_with model: @warehouse do |f| %>
+      <p>
+        <%= f.label :name, 'Nome' %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :description, 'Descrição' %>
+        <%= f.text_area :description %>
+      </p>
+      <p>
+        <%= f.label :code, 'Código' %>
+        <%= f.text_field :code %>
+      </p>
+      <p>
+        <%= f.label :area, 'Área' %>
+        <%= f.number_field :area %>
+      </p>
+      <p>
+        <%= f.label :city, 'Cidade' %>
+        <%= f.text_field :city %>
+      </p>
+      <p>
+        <%= f.label :address, 'Endereço' %>
+        <%= f.text_field :address %>
+      </p>
+      <p>
+        <%= f.label :zip_code, 'CEP' %>
+        <%= f.text_field :zip_code %>
+      </p>
+        <%= f.submit 'Enviar' %>
+      <p>
+    <% end %>
+  </main>
+</article>
