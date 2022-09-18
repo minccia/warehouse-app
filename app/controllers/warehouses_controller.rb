@@ -13,6 +13,7 @@ class WarehousesController < ApplicationController
       flash.notice = 'Galpão criado com sucesso'
       return redirect_to root_path 
     end
+    flash.notice = 'É necessário preencher todos os campos.'
     render :new, status: :unprocessable_entity
   end
 

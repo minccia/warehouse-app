@@ -34,4 +34,16 @@ describe 'Usuário registra um galpão' do
     expect(page).to have_content '100000 metros quadrados'
   end
 
+  it 'e não preenche todos os campos' do 
+    visit root_path 
+    click_on 'New Warehouse'
+
+    fill_in 'Nome', with: ''
+    fill_in 'Descrição', with: ''
+    click_on 'Enviar'
+
+    expect(current_path).to eq warehouses_path
+    expect(page).to have_content 'É necessário preencher todos os campos.'
+  end
+
 end
