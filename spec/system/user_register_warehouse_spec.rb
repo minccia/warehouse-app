@@ -28,6 +28,7 @@ describe 'Usuário registra um galpão' do
     click_on 'Enviar'
 
     expect(current_path).to eq root_path
+    expect(page).to have_content 'Galpão criado com sucesso'
     expect(page).to have_link 'Galpão Guarulhos'
     expect(page).to have_content 'XLR'
     expect(page).to have_content '100000 metros quadrados'

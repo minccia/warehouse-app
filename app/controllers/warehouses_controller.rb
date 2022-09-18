@@ -9,7 +9,10 @@ class WarehousesController < ApplicationController
 
   def create  
     warehouse = Warehouse.create new_warehouse_params
-    return redirect_to root_path if warehouse.save
+    if warehouse.save
+      flash.notice = 'Galpão criado com sucesso'
+      return redirect_to root_path 
+    end
     render :new, status: :unprocessable_entity
   end
 
