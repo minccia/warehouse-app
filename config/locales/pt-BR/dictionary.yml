@@ -1,7 +1,9 @@
 ---
 pt-BR:
-  new: 'Novo'
-  home: 'Início'
+  buttons: 
+    new: 'Novo'
+    home: 'Início'
+    
   verify_errors_below: 'Verifique os erros abaixo:'
   no_warehouses_yet: 'Não há galpões cadastrados ainda'
   warehouses_and_stock: 'Galpões & Estoque'
