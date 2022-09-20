@@ -5,13 +5,13 @@
   <main>
     <section>
       <% @warehouses.each do |wh| %>
-        <h3> <%= link_to "#{wh.name}", warehouse_path(wh.id) %> </h3>
+        <h3> <%= link_to "#{ wh.name }", warehouse_path(wh.id) %> </h3>
         <dl>
-          <dt> <%= t('activerecord.attributes.warehouse.code') %>: </dt>
+          <dt> <%= t 'activerecord.attributes.warehouse.code' %>: </dt>
           <dd> <%= wh.code %> </dd>
-          <dt> <%= t('activerecord.attributes.warehouse.area') %>: </dt>
+          <dt> <%= t 'activerecord.attributes.warehouse.area' %>: </dt>
           <dd> <%= wh.area %> <%= t('square_meters') %> </dd>
-          <dt> <%= t('activerecord.attributes.warehouse.city') %>: </dt> 
+          <dt> <%= t 'activerecord.attributes.warehouse.city' %>: </dt> 
           <dd> <%= wh.city %> </dd>
         </dl>
       <% end %>
@@ -19,7 +19,7 @@
   </main>
   <footer>
     <ul>
-      <li> <%= link_to "#{t('buttons.new')} #{t('activerecord.models.warehouse')}", new_warehouse_path %> </li>
+      <li> <%= link_to "#{ t 'buttons.new' } #{ t 'activerecord.models.warehouse' }", new_warehouse_path %> </li>
     </ul>
   </footer>
 </article>

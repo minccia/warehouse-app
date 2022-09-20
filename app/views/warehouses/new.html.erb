@@ -1,17 +1,16 @@
 <article>
   <header>
     <%= link_to t('buttons.home'), root_path %> 
-    <h1> <%= "#{t('new')} #{t('activerecord.models.warehouse')}" %> </h1>
+    <h1> <%= "#{ t 'new' } #{ t 'activerecord.models.warehouse' }" %> </h1>
 
-    <% if(@warehouse.errors.any?) %>
-      <p> <%= t('verify_errors_below') %> </p>
+    <% if @warehouse.errors.any?  %>
+      <p> <%= t 'verify_errors_below' %> </p>
       <% @warehouse.errors.each do |error| %>
         <ul>
           <li> <%= error.full_message %> </li>
         </ul>
       <% end %>
     <% end %>
-
   </header>
 
   <main>
