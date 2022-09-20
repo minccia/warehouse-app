@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário registra um galpão' do 
   it 'a partir da tela inicial' do
      visit root_path 
-     click_on 'New Warehouse'
+     click_on 'Novo Galpão'
 
      expect(page).to have_field 'Nome'
      expect(page).to have_field 'Descrição'
@@ -16,7 +16,7 @@ describe 'Usuário registra um galpão' do
 
   it 'com sucesso' do 
     visit root_path 
-    click_on 'New Warehouse'
+    click_on 'Novo Galpão'
 
     fill_in 'Nome', with: 'Galpão Guarulhos'
     fill_in 'Descrição', with: 'É o maior galpão do Brasil!'
@@ -36,7 +36,7 @@ describe 'Usuário registra um galpão' do
 
   it 'e não preenche todos os campos' do 
     visit root_path 
-    click_on 'New Warehouse'
+    click_on 'Novo Galpão'
 
     fill_in 'Nome', with: ''
     fill_in 'Descrição', with: ''
@@ -44,6 +44,7 @@ describe 'Usuário registra um galpão' do
 
     expect(current_path).to eq warehouses_path
     expect(page).to have_content 'Galpão não cadastrado'
+    expect(page).to have_content 'Verifique os erros abaixo:'
     expect(page).to have_content 'Nome não pode ficar em branco'
     expect(page).to have_content 'Descrição não pode ficar em branco'
   end

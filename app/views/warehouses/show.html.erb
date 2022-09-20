@@ -1,25 +1,25 @@
 <article>
   <header>
-    <%= link_to 'Início', root_path %> 
-    <p> Informações do Galpão: </p>
+    <%= link_to t('home'), root_path %> 
+    <p> <%= "#{t('information_from')} #{t('activerecord.models.warehouse')}" %> </p>
   </header>
 
   <main>
       <h3> <%= @warehouse.name %> </h3>
       <dl>
-        <dt> Código: </dt>
+        <dt> <%= t('activerecord.attributes.warehouse.code') %>: </dt>
         <dd> <%= @warehouse.code %> </dd>
 
-        <dt> Área: </dt> 
-        <dd> <%= @warehouse.area %> metros quadrados </dd>
+        <dt> <%= t('activerecord.attributes.warehouse.area') %>: </dt> 
+        <dd> <%= @warehouse.area %> <%= t('square_meters') %> </dd>
 
-        <dt> Cidade: </dt>
+        <dt> <%= t('activerecord.attributes.warehouse.city') %>: </dt>
         <dd> <%= @warehouse.city %> </dd>
 
-        <dt> Endereço: </dt>
+        <dt> <%= t('activerecord.attributes.warehouse.address') %>: </dt>
         <dd> <%= @warehouse.address %> </dd>
 
-        <dt> CEP: </dt>
+        <dt> <%= t('activerecord.attributes.warehouse.zip_code') %>: </dt>
         <dd> <%= @warehouse.zip_code %> </dd>
 
         <p> <%= @warehouse.description %> </p>

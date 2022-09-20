@@ -10,10 +10,10 @@ class WarehousesController < ApplicationController
   def create  
     @warehouse = Warehouse.create new_warehouse_params
     if @warehouse.save
-      flash.notice = 'Galpão criado com sucesso'
+      flash.notice = "#{t('activerecord.models.warehouse')} #{t('created_with_success')}"
       return redirect_to root_path 
     end
-    flash.notice = 'Galpão não cadastrado'
+    flash.notice = "#{t('activerecord.models.warehouse')} #{t('not_registered')}"
     render :new, status: :unprocessable_entity
   end
 

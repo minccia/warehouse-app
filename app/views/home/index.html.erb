@@ -1,6 +1,5 @@
 <article>
   <header>
-    <h1> Galpões & Estoque </h1>
   </header>
 
   <main>
@@ -8,20 +7,19 @@
       <% @warehouses.each do |wh| %>
         <h3> <%= link_to "#{wh.name}", warehouse_path(wh.id) %> </h3>
         <dl>
-          <dt> Código: </dt>
+          <dt> <%= t('activerecord.attributes.warehouse.code') %>: </dt>
           <dd> <%= wh.code %> </dd>
-          <dt> Área: </dt>
-          <dd> <%= wh.area %> metros quadrados </dd>
-          <dt> Cidade: </dt> 
+          <dt> <%= t('activerecord.attributes.warehouse.area') %>: </dt>
+          <dd> <%= wh.area %> <%= t('square_meters') %> </dd>
+          <dt> <%= t('activerecord.attributes.warehouse.city') %>: </dt> 
           <dd> <%= wh.city %> </dd>
         </dl>
       <% end %>
     </section>
   </main>
-
   <footer>
     <ul>
-      <li> <%= link_to 'New Warehouse', new_warehouse_path %> </li>
+      <li> <%= link_to "#{t('new')} #{t('activerecord.models.warehouse')}", new_warehouse_path %> </li>
     </ul>
   </footer>
 </article>

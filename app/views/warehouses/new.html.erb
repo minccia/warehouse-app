@@ -1,36 +1,47 @@
 <article>
   <header>
-    <h1> New Warehouse </h1>
+    <%= link_to t('home'), root_path %> 
+    <h1> <%= "#{t('new')} #{t('activerecord.models.warehouse')}" %> </h1>
+
+    <% if(@warehouse.errors.any?) %>
+      <p> <%= t('verify_errors_below') %> </p>
+      <% @warehouse.errors.each do |error| %>
+        <ul>
+          <li> <%= error.full_message %> </li>
+        </ul>
+      <% end %>
+    <% end %>
+
   </header>
 
   <main>
     <%= form_with model: @warehouse do |f| %>
       <p>
-        <%= f.label :name, 'Nome' %>
+        <%= f.label :name%>
         <%= f.text_field :name %>
       </p>
       <p>
-        <%= f.label :description, 'Descrição' %>
+        <%= f.label :description %>
         <%= f.text_area :description %>
       </p>
       <p>
-        <%= f.label :code, 'Código' %>
+        <%= f.label :code %>
         <%= f.text_field :code %>
       </p>
       <p>
-        <%= f.label :area, 'Área' %>
+        <%= f.label :area %>
         <%= f.number_field :area %>
       </p>
       <p>
-        <%= f.label :city, 'Cidade' %>
+        <%= f.label :city %>
         <%= f.text_field :city %>
       </p>
       <p>
-        <%= f.label :address, 'Endereço' %>
+        <%= f.label :address %>
         <%= f.text_field :address %>
       </p>
       <p>
-        <%= f.label :zip_code, 'CEP' %>
+        <%= f.label :zip_code %>
         <%= f.text_field :zip_code %>
       </p>
         <%= f.submit 'Enviar' %>
