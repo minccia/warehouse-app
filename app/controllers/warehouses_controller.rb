@@ -1,6 +1,6 @@
 class WarehousesController < ApplicationController
   def show 
-    @wh = Warehouse.find params[:id]
+    @warehouse = Warehouse.find params[:id]
   end
 
   def new 
@@ -8,8 +8,8 @@ class WarehousesController < ApplicationController
   end
 
   def create  
-    warehouse = Warehouse.create new_warehouse_params
-    if warehouse.save
+    @warehouse = Warehouse.create new_warehouse_params
+    if @warehouse.save
       flash.notice = 'Galpão criado com sucesso'
       return redirect_to root_path 
     end
