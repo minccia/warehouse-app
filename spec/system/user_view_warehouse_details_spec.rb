@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Usuário vê detalhes de um galpão' do 
   it 'e vê informações adicionais' do  
-    Warehouse.create(
+    Warehouse.create!(
         name:        'Galpão Guarulhos',
         code:        'XLR',
         area:        100_000,
@@ -25,7 +25,7 @@ describe 'Usuário vê detalhes de um galpão' do
   end
 
   it 'e retorna pra tela incial' do 
-    Warehouse.create(
+    Warehouse.create!(
       name:        'Galpão Guarulhos',
       code:        'XLR',
       area:        100_000,

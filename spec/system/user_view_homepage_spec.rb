@@ -8,7 +8,7 @@ describe 'Usuário visita a página inicial' do
   end
 
   it 'e vê os galpões cadastrados' do 
-    Warehouse.create(
+    Warehouse.create!(
                   name:        'Galpão Guarulhos',
                   code:        'XLR',
                   area:        100_000,
@@ -18,7 +18,7 @@ describe 'Usuário visita a página inicial' do
                   description: 'É o maior galpão do Brasil!'
                 )
 
-    Warehouse.create(
+    Warehouse.create!(
                   name:        'Galpão Maceió',
                   code:        'ZNT',
                   area:        80_000,

@@ -1,13 +1,12 @@
 ---
 pt-BR:
-  buttons: 
-    new: 'Novo'
-    home: 'Início'
-    
+  edit: 'Editar'
   verify_errors_below: 'Verifique os erros abaixo:'
   no_warehouses_yet: 'Não há galpões cadastrados ainda'
   warehouses_and_stock: 'Galpões & Estoque'
   information_from: 'Informações do'
   square_meters: 'metros quadrados'
+  updated_with_success: 'atualizado com sucesso'
+  not_updated: 'não atualizado'
   created_with_success: 'criado com sucesso'
   not_registered: 'não cadastrado'

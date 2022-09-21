@@ -169,7 +169,7 @@ RSpec.describe Warehouse, type: :model do
     end
 
     context 'format' do 
-      it 'false when zip_code is invalid' do 
+      it 'false when zip_code has more characters than permited' do 
         warehouse = Warehouse.new(
                                   name: 'Rio de Janeiro',
                                   description:'Não é tão grande assim',
@@ -177,6 +177,34 @@ RSpec.describe Warehouse, type: :model do
                                   area: 80_000,
                                   city: 'Rio de janeiro',
                                   zip_code: '345302-7003',
+                                  address: 'Rua São José Gonçalo, 500',
+                                 )
+
+        expect(warehouse).not_to be_valid
+      end
+
+      it 'false when zip_code has less characters than permited' do 
+        warehouse = Warehouse.new(
+                                  name: 'Rio de Janeiro',
+                                  description:'Não é tão grande assim',
+                                  code: 'CDU',
+                                  area: 80_000,
+                                  city: 'Rio de janeiro',
+                                  zip_code: '34-703',
+                                  address: 'Rua São José Gonçalo, 500',
+                                 )
+
+        expect(warehouse).not_to be_valid
+      end
+
+      it 'false when zip_code has not a hifen' do 
+        warehouse = Warehouse.new(
+                                  name: 'Rio de Janeiro',
+                                  description:'Não é tão grande assim',
+                                  code: 'CDU',
+                                  area: 80_000,
+                                  city: 'Rio de janeiro',
+                                  zip_code: '60337703',
                                   address: 'Rua São José Gonçalo, 500',
                                  )
 
