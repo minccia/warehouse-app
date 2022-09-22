@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <h1> <%= "#{t('warehouses_and_stock')}" %> </h1>
-    <p> <%= notice %> </p>
+    <h1> <%= "#{ t 'warehouses_and_stock' }" %> </h1>
+    <% flash.each do |type, msg| %>
+      <p> <%= msg %> </p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

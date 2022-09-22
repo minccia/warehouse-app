@@ -26,6 +26,9 @@
       </dl>
   </main>
   <footer>
-    <%= link_to t('buttons.edit'), edit_warehouse_path %>
+    <ul>
+      <li> <%= link_to t('buttons.edit'), edit_warehouse_path %> <li>
+      <li> <%= button_to t('buttons.delete'), warehouse_path(@warehouse.id), method: :delete %> </li>
+    </ul>
   </footer>
 </article>

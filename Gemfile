@@ -15,6 +15,7 @@ end
 
 group :test do 
   gem "capybara"
+  gem "byebug"
 end
 
 group :development do
