@@ -13,7 +13,8 @@
     <header>
       <h1> <%= "#{ t 'warehouses_and_stock' }" %> </h1>
       <nav>
-        <%= link_to t('activerecord.models.supplier'), suppliers_path %>
+        <%= link_to t('buttons.home'), root_path %> 
+        <%= link_to t('suppliers'), suppliers_path %>
       </nav>
       <section>
         <%= alert %>
