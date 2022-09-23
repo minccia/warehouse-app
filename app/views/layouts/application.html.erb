@@ -10,10 +10,19 @@
   </head>
 
   <body>
-    <h1> <%= "#{ t 'warehouses_and_stock' }" %> </h1>
-    <% flash.each do |type, msg| %>
-      <p> <%= msg %> </p>
-    <% end %>
-    <%= yield %>
+    <header>
+      <h1> <%= "#{ t 'warehouses_and_stock' }" %> </h1>
+      <nav>
+        <%= link_to t('activerecord.models.supplier'), suppliers_path %>
+      </nav>
+      <section>
+        <%= alert %>
+        <%= notice %>
+      </section>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
