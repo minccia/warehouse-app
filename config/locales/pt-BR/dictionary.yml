@@ -12,3 +12,4 @@ pt-BR:
   created_with_success: 'criado com sucesso'
   not_registered: 'não cadastrado'
   deleted_with_success: 'removido com sucesso'
+  no_suppliers_registered: 'Não há fornecedores cadastrados ainda'

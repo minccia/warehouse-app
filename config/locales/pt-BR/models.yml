@@ -3,6 +3,7 @@ pt-BR:
   activerecord:
     models:
       warehouse: 'Galpão'
+      supplier: 'Fornecedores'
     
     attributes:
       warehouse:

@@ -1,1 +1,30 @@
-<h2> <%= t 'activerecord.models.supplier' %> </h2>
+<article>
+  <header>
+    <h2> <%= t 'activerecord.models.supplier' %> </h2>
+  </header>
+
+  <main>
+    <% if @suppliers.any? %>
+      <table>
+        <thead>
+          <tr>
+            <th> Nome </th>
+            <th> Localização </th>
+            <th> Email <th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @suppliers.each do |sup| %>
+            <tr>
+              <td> <%= sup.brand_name %> </td>
+              <td> <%= sup.city %> - <%= sup.state %> </td>
+              <td> <%= sup.email %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p> <%= t 'no_suppliers_registered' %> </p>
+    <% end %>
+  </main>
+</article>
