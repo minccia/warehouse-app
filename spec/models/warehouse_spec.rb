@@ -166,9 +166,7 @@ RSpec.describe Warehouse, type: :model do
 
         expect(warehouse).not_to be_valid
       end
-    end
 
-    context 'format' do 
       it 'false when zip_code has more characters than permited' do 
         warehouse = Warehouse.new(
                                   name: 'Rio de Janeiro',
