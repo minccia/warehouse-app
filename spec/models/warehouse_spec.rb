@@ -10,7 +10,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'XLR',
                                   city: 'Guarulhos',
                                   area: 100_000,
-                                  zip_code: '60337-670',
+                                  zip_code: '60337670',
                                   address: 'Rua Padre José Anchieta, 100',
                               )
         
@@ -24,7 +24,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'XLR',
                                   city: 'Guarulhos',
                                   area: 100_000,
-                                  zip_code: '60337-670',
+                                  zip_code: '60337670',
                                   address: 'Rua Padre José Anchieta, 100',
                                 )
           
@@ -38,7 +38,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: '',
                                   city: 'Guarulhos',
                                   area: 100_000,
-                                  zip_code: '60337-670',
+                                  zip_code: '60337670',
                                   address: 'Rua Padre José Anchieta, 100',
                               )
         
@@ -52,7 +52,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'XLR',
                                   area: '',
                                   city: 'Guarulhos',
-                                  zip_code: '60337-670',
+                                  zip_code: '60337670',
                                   address: 'Rua Padre José Anchieta, 100',
                               )
         
@@ -80,7 +80,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'XLR',
                                   city: 'Guarulhos',
                                   area: 100_000,
-                                  zip_code: '60337-670',
+                                  zip_code: '60337670',
                                   address: '',
                               )
         
@@ -94,7 +94,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'XLR',
                                   city: '',
                                   area: 100_000,
-                                  zip_code: '60337-670',
+                                  zip_code: '60337670',
                                   address: '',
                               )
         
@@ -110,7 +110,7 @@ RSpec.describe Warehouse, type: :model do
                           code: 'XLR',
                           city: 'Guarulhos',
                           area: 100_000,
-                          zip_code: '60337-670',
+                          zip_code: '60337670',
                           address: 'Rua Padre Anchieta, 100',
                         )
 
@@ -120,7 +120,7 @@ RSpec.describe Warehouse, type: :model do
                                    code: 'XLR',
                                    city: 'Rio de Janeiro',
                                    area: 80_000,
-                                   zip_code: '34530-700',
+                                   zip_code: '34530700',
                                    address: 'Rua São José Gonçalo, 500',
                                 )
 
@@ -134,7 +134,7 @@ RSpec.describe Warehouse, type: :model do
                           code: 'XLR',
                           city: 'Guarulhos',
                           area: 100_000,
-                          zip_code: '60337-670',
+                          zip_code: '60337670',
                           address: 'Rua Padre Anchieta, 100',
                         )
 
@@ -144,7 +144,7 @@ RSpec.describe Warehouse, type: :model do
                                    code: 'CDU',
                                    city: 'Guarulhos',
                                    area: 80_000,
-                                   zip_code: '34530-700',
+                                   zip_code: '34530700',
                                    address: 'Rua São José Gonçalo, 500',
                                 )
 
@@ -160,7 +160,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'CDUAB',
                                   area: 80_000,
                                   city: 'Rio de janeiro',
-                                  zip_code: '60553-230',
+                                  zip_code: '60553230',
                                   address: 'Rua São José Gonçalo, 500',
                                  )
 
@@ -176,7 +176,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'CDU',
                                   area: 80_000,
                                   city: 'Rio de janeiro',
-                                  zip_code: '345302-7003',
+                                  zip_code: '3453027003',
                                   address: 'Rua São José Gonçalo, 500',
                                  )
 
@@ -190,21 +190,7 @@ RSpec.describe Warehouse, type: :model do
                                   code: 'CDU',
                                   area: 80_000,
                                   city: 'Rio de janeiro',
-                                  zip_code: '34-703',
-                                  address: 'Rua São José Gonçalo, 500',
-                                 )
-
-        expect(warehouse).not_to be_valid
-      end
-
-      it 'false when zip_code has not a hifen' do 
-        warehouse = Warehouse.new(
-                                  name: 'Rio de Janeiro',
-                                  description:'Não é tão grande assim',
-                                  code: 'CDU',
-                                  area: 80_000,
-                                  city: 'Rio de janeiro',
-                                  zip_code: '60337703',
+                                  zip_code: '34703',
                                   address: 'Rua São José Gonçalo, 500',
                                  )
 

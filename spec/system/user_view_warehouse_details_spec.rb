@@ -8,7 +8,7 @@ describe 'Usuário vê detalhes de um galpão' do
         area:        100_000,
         city:        'Guarulhos',
         address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-        zip_code:    '07190-100',
+        zip_code:    '07197100',
         description: 'É o maior galpão do Brasil!'
       )
 
@@ -20,7 +20,7 @@ describe 'Usuário vê detalhes de um galpão' do
     expect(page).to have_content 'Área: 100000 metros quadrados'
     expect(page).to have_content 'Cidade: Guarulhos'
     expect(page).to have_content 'Endereço: Rodovia Hélio Smidt, s/n, Cumbica'
-    expect(page).to have_content 'CEP: 07190-100'
+    expect(page).to have_content 'CEP: 07197-100'
     expect(page).to have_content 'É o maior galpão do Brasil!'
   end
 
@@ -31,7 +31,7 @@ describe 'Usuário vê detalhes de um galpão' do
       area:        100_000,
       city:        'Guarulhos',
       address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-      zip_code:    '07190-100',
+      zip_code:    '07190100',
       description: 'É o maior galpão do Brasil!'
     )
 

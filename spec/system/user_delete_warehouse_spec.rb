@@ -8,7 +8,7 @@ describe 'Usuário deleta um galpão' do
                       area:        100_000,
                       city:        'Guarulhos',
                       address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-                      zip_code:    '07190-100',
+                      zip_code:    '07190100',
                       description: 'É o maior galpão do Brasil!'
                   )
 
@@ -31,7 +31,7 @@ describe 'Usuário deleta um galpão' do
                         area:        100_000,
                         city:        'Guarulhos',
                         address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-                        zip_code:    '07190-100',
+                        zip_code:    '07190100',
                         description: 'É o maior galpão do Brasil!'
                  )
     Warehouse.create!(
@@ -40,7 +40,7 @@ describe 'Usuário deleta um galpão' do
                         area:        150_000,
                         city:        'Natal',
                         address:      'Praia do Amor',
-                        zip_code:    '10010-995',
+                        zip_code:    '10010995',
                         description: 'É um galpão cheio de adesivos de golfinhos'
                  )
 

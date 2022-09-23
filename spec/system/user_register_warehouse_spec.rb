@@ -5,6 +5,7 @@ describe 'Usuário registra um galpão' do
      visit root_path 
      click_on 'Novo Galpão'
 
+     expect(page).to have_content 'Novo Galpão'
      expect(page).to have_field 'Nome'
      expect(page).to have_field 'Descrição'
      expect(page).to have_field 'Código'
@@ -24,7 +25,7 @@ describe 'Usuário registra um galpão' do
     fill_in 'Área', with: '100000'
     fill_in 'Cidade', with: 'Guarulhos'
     fill_in 'Endereço', with: 'Rodovia Hélio Smidt, s/n, Cumbica'
-    fill_in 'CEP', with: '07190-100'
+    fill_in 'CEP', with: '07190100'
     click_on 'Enviar'
 
     expect(current_path).to eq root_path

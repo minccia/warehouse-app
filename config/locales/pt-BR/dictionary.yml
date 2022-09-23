@@ -1,5 +1,6 @@
 ---
 pt-BR:
+  new: 'Novo'
   edit: 'Editar'
   verify_errors_below: 'Verifique os erros abaixo:'
   no_warehouses_yet: 'Não há galpões cadastrados ainda'
