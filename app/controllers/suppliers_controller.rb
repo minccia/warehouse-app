@@ -1,4 +1,5 @@
 class SuppliersController < ApplicationController
+  before_action :set_supplier, only: %i[show edit update]
   def index 
     @suppliers = Supplier.all
   end
@@ -17,11 +18,25 @@ class SuppliersController < ApplicationController
     render :new, status: :unprocessable_entity
   end
 
-  def show 
-    @supplier = Supplier.find params[:id]
+  def show; end
+
+  def edit; end
+
+  def update 
+    if @supplier.update new_supplier_params
+      flash.notice = "#{ t 'activerecord.models.supplier' } #{ t 'updated_with_success' }"
+      return redirect_to supplier_url(@supplier.id)
+    end
+    flash.now.notice = "#{ t 'activerecord.models.supplier' } #{ t 'not_updated' }"
+    render :edit, status: :unprocessable_entity
   end
 
   private 
+
+    def set_supplier
+      @supplier = Supplier.find params[:id]
+    end
+
     def new_supplier_params
       params.require(:supplier).permit(
         :corporate_name, :brand_name, :registration_number,
