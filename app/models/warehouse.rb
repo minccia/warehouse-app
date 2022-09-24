@@ -5,6 +5,6 @@ class Warehouse < ApplicationRecord
   validates :zip_code, length: { is: 8}
 
   def formatted_zip_code
-    self.zip_code.gsub(/\d{3}$/, '') << '-' << self.zip_code.gsub(/^\d{5}/, '') 
+    "#{self.zip_code[0..4]}-#{self.zip_code[5..8]}"
   end
 end
