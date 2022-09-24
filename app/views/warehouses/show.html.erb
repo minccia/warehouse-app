@@ -6,20 +6,20 @@
   <main>
       <h3> <%= @warehouse.name %> </h3>
       <dl>
-        <dt> <%= t 'activerecord.attributes.warehouse.code' %>: </dt>
+        <dt> <%= Warehouse.human_attribute_name 'code' %>: </dt>
         <dd> <%= @warehouse.code %> </dd>
 
-        <dt> <%= t 'activerecord.attributes.warehouse.area' %>: </dt> 
+        <dt> <%= Warehouse.human_attribute_name 'area' %>: </dt> 
         <dd> <%= @warehouse.area %> <%= t 'square_meters'  %> </dd>
 
-        <dt> <%= t 'activerecord.attributes.warehouse.city' %>: </dt>
+        <dt> <%= Warehouse.human_attribute_name 'city' %>: </dt>
         <dd> <%= @warehouse.city %> </dd>
 
-        <dt> <%= t 'activerecord.attributes.warehouse.address' %>: </dt>
+        <dt> <%= Warehouse.human_attribute_name 'address' %>: </dt>
         <dd> <%= @warehouse.address %> </dd>
 
-        <dt> <%= t 'activerecord.attributes.warehouse.zip_code' %>: </dt>
-        <dd> <%= @warehouse.formatted_corrected_zip_code %> </dd>
+        <dt> <%= Warehouse.human_attribute_name 'zip_code' %>: </dt>
+        <dd> <%= @warehouse.formatted_zip_code %> </dd>
 
         <p> <%= @warehouse.description %> </p>
       </dl>
