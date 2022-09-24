@@ -1,6 +1,6 @@
 <article>
   <header>
-    <h2> <%= t 'activerecord.models.supplier' %> </h2>
+    <h2> <%= t 'suppliers' %> </h2>
   </header>
 
   <main>
@@ -27,4 +27,9 @@
       <p> <%= t 'no_suppliers_registered' %> </p>
     <% end %>
   </main>
+  <footer>
+    <ul>
+      <li> <%= link_to "#{ t 'new' } #{ t 'activerecord.models.supplier' }", new_supplier_path %> </li>
+    </ul>
+  </footer>
 </article>

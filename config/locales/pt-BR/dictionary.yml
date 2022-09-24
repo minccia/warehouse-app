@@ -1,5 +1,7 @@
 ---
 pt-BR:
+  register_suppliers: 'Cadastro de Fornecedores'
+  suppliers: 'Fornecedores'
   new: 'Novo'
   edit: 'Editar'
   verify_errors_below: 'Verifique os erros abaixo:'

@@ -15,21 +15,23 @@ describe 'Usuário vê os fornecedores' do
     Supplier.create!(
                       corporate_name: 'XP Corretora de Investimentos LTDA',
                       brand_name: 'XP Investimentos',
-                      registration_number: '432812983984',
-                      full_adress: 'Av. Das Palmas, 100',
+                      registration_number: '43281298398422',
+                      full_address: 'Av. Das Palmas, 100',
                       city: 'Guarulhos',
                       state: 'SP',
-                      email: 'contato@xpcorretora.com'
+                      email: 'contato@xpcorretora.com',
+                      phone_number: '8599999999'
                 )
 
     Supplier.create!(
                       corporate_name: 'Nubank Agência de Pagamentos SA',
                       brand_name: 'Nubank',
-                      registration_number: '123956739821',
-                      full_adress: 'Av. Francisco Sá, 80',
+                      registration_number: '12395673982122',
+                      full_address: 'Av. Francisco Sá, 80',
                       city: 'Fortaleza',
                       state: 'CE',
-                      email: 'atendimento@nubank.com'
+                      email: 'atendimento@nubank.com',
+                      phone_number: '8599999999'
                 )
 
     visit root_path 
