@@ -16,9 +16,9 @@
         <tbody>
           <% @suppliers.each do |sup| %>
             <tr>
-              <td> <%= sup.brand_name %> </td>
-              <td> <%= sup.city %> - <%= sup.state %> </td>
-              <td> <%= sup.email %>
+              <td> <%= link_to sup.brand_name, supplier_path(sup.id) %> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+              <td> <%= sup.city %> - <%= sup.state %> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+              <td> <%= sup.email %> 
             </tr>
           <% end %>
         </tbody>

@@ -5,14 +5,14 @@ RSpec.describe Supplier, type: :model do
     context 'presence' do 
       it 'false when corporate_name is empty' do
         supplier = Supplier.new(
-                                  corporate_name: '',
-                                  brand_name: 'XP Investimentos',
-                                  registration_number: '43281298398422',
-                                  full_address: 'Av. Das Palmas, 100',
-                                  city: 'Guarulhos',
-                                  state: 'SP',
-                                  email: 'contato@xpcorretora.com',
-                                  phone_number: '8599999999'
+                                corporate_name: '',
+                                brand_name: 'XP Investimentos',
+                                registration_number: '43281298398422',
+                                full_address: 'Av. Das Palmas, 100',
+                                city: 'Guarulhos',
+                                state: 'SP',
+                                email: 'contato@xpcorretora.com',
+                                phone_number: '8599999999'
                                )
 
         expect(supplier).not_to be_valid

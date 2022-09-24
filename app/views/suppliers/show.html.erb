@@ -1,0 +1,30 @@
+<article>
+  <main>
+    <dl>
+      <p>
+        <dt> <%= Supplier.human_attribute_name 'corporate_name' %>: </dt>
+        <dd> <%= @supplier.corporate_name %> </dd>
+      </p>
+      <p>
+        <dt> <%= Supplier.human_attribute_name 'brand_name' %>: </dt>
+        <dd> <%= @supplier.brand_name %> </dd>
+      </p>
+      <p>
+        <dt> <%= Supplier.human_attribute_name 'registration_number' %>: </dt>
+        <dd> <%= @supplier.formatted_registration_number %> </dd>
+      </p>
+      <p>
+        <dt> <%= Supplier.human_attribute_name 'full_address' %>: </dt>
+        <dd> <%= @supplier.full_address %>. <%= @supplier.city %> - <%= @supplier.state %> </dd>
+      </p>
+      <p>
+        <dt> <%= Supplier.human_attribute_name 'email' %>: </dt>
+        <dd> <%= @supplier.email %> </dd>
+      </p>
+      <p>
+        <dt> <%= Supplier.human_attribute_name 'phone_number' %> </dt>
+        <dd> <%= @supplier.formatted_phone_number %>
+      </p>
+    </dl>
+  </main>
+</article>

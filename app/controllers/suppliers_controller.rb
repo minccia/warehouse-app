@@ -17,6 +17,10 @@ class SuppliersController < ApplicationController
     render :new, status: :unprocessable_entity
   end
 
+  def show 
+    @supplier = Supplier.find params[:id]
+  end
+
   private 
     def new_supplier_params
       params.require(:supplier).permit(
