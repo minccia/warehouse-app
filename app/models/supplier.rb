@@ -1,5 +1,3 @@
-require 'cpf_cnpj'
-
 class Supplier < ApplicationRecord
   validates :corporate_name, :brand_name, :registration_number, :email, presence: true
   validates :registration_number, uniqueness: true 
@@ -8,8 +6,7 @@ class Supplier < ApplicationRecord
   validates :email, { format: /\A\S+@.+\.\S+\z/ }
 
   def formatted_registration_number
-    registration_number = CNPJ.new(self.registration_number)
-    registration_number.formatted
+    CNPJ.new(self.registration_number).formatted
   end
 
   def formatted_phone_number
