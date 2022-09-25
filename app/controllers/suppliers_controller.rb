@@ -1,5 +1,5 @@
 class SuppliersController < ApplicationController
-  before_action :set_supplier, only: %i[show edit update]
+  before_action :fetch_supplier, only: %i[show edit update]
   def index 
     @suppliers = Supplier.all
     if @suppliers.empty?
@@ -36,7 +36,7 @@ class SuppliersController < ApplicationController
 
   private 
 
-    def set_supplier
+    def fetch_supplier
       @supplier = Supplier.find params[:id]
     end
 
