@@ -2,6 +2,9 @@ class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show edit update]
   def index 
     @suppliers = Supplier.all
+    if @suppliers.empty?
+      flash.now.notice =  t 'no_suppliers_registered'
+    end
   end
 
   def new 

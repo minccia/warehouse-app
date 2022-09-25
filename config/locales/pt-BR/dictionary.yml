@@ -17,3 +17,4 @@ pt-BR:
   not_registered: 'não cadastrado'
   deleted_with_success: 'removido com sucesso'
   no_suppliers_registered: 'Não há fornecedores cadastrados ainda'
+  no_product_models_registered: 'Não há modelos de produtos cadastrados ainda'

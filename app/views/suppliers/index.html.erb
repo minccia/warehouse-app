@@ -4,7 +4,6 @@
   </header>
 
   <main>
-    <% if @suppliers.any? %>
       <table>
         <thead>
           <tr>
@@ -23,9 +22,6 @@
           <% end %>
         </tbody>
       </table>
-    <% else %>
-      <p> <%= t 'no_suppliers_registered' %> </p>
-    <% end %>
   </main>
   <footer>
     <ul>
