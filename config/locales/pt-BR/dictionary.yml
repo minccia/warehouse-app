@@ -1,5 +1,6 @@
 ---
 pt-BR:
+  localization: 'Localização'
   register_suppliers: 'Cadastro de Fornecedores'
   suppliers: 'Fornecedores'
   product_models: 'Modelos de Produtos'
