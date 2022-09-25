@@ -62,6 +62,21 @@ RSpec.describe Supplier, type: :model do
                                
         expect(supplier).not_to be_valid
       end
+
+      it 'false when phone_number is empty' do
+        supplier = Supplier.new(
+                                  corporate_name: 'XP Corretora de Investimentos LTDA',
+                                  brand_name: 'XP Investimentos',
+                                  registration_number: '43281298398422',
+                                  full_address: 'Av. Das Palmas, 100',
+                                  city: 'Guarulhos',
+                                  state: 'SP',
+                                  email: 'sac@xpinvestimentos.com',
+                                  phone_number: ''
+                               )
+                               
+        expect(supplier).not_to be_valid
+      end
     end
 
     context 'uniqueness' do 
