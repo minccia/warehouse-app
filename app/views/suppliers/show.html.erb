@@ -1,10 +1,9 @@
 <article>
   <main>
+    <p>
+      <h2> <%= Supplier.human_attribute_name 'corporate_name' %>: <%= @supplier.corporate_name %> </h2>
+    </p>
     <dl>
-      <p>
-        <dt> <%= Supplier.human_attribute_name 'corporate_name' %>: </dt>
-        <dd> <%= @supplier.corporate_name %> </dd>
-      </p>
       <p>
         <dt> <%= Supplier.human_attribute_name 'brand_name' %>: </dt>
         <dd> <%= @supplier.brand_name %> </dd>
