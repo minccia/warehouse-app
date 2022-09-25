@@ -3,13 +3,13 @@ require 'rails_helper'
 describe 'Usuário vê detalhes de um galpão' do 
   it 'e vê informações adicionais' do  
     Warehouse.create!(
-        name:        'Galpão Guarulhos',
-        code:        'XLR',
-        area:        100_000,
-        city:        'Guarulhos',
-        address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-        zip_code:    '07197100',
-        description: 'É o maior galpão do Brasil!'
+                      name:        'Galpão Guarulhos',
+                      code:        'XLR',
+                      area:        100_000,
+                      city:        'Guarulhos',
+                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
+                      zip_code:    '07197100',
+                      description: 'É o maior galpão do Brasil!'
       )
 
     visit root_path 
@@ -26,13 +26,13 @@ describe 'Usuário vê detalhes de um galpão' do
 
   it 'e retorna pra tela incial' do 
     Warehouse.create!(
-      name:        'Galpão Guarulhos',
-      code:        'XLR',
-      area:        100_000,
-      city:        'Guarulhos',
-      address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-      zip_code:    '07190100',
-      description: 'É o maior galpão do Brasil!'
+                      name:        'Galpão Guarulhos',
+                      code:        'XLR',
+                      area:        100_000,
+                      city:        'Guarulhos',
+                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
+                      zip_code:    '07190100',
+                      description: 'É o maior galpão do Brasil!'
     )
 
     visit root_path 

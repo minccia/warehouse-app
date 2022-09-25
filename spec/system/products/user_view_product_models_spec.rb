@@ -12,30 +12,30 @@ describe 'Usuário vê os produtos cadastrados' do
 
   it 'com sucesso' do 
     supplier = Supplier.create!(
-                                corporate_name: 'Samsung Technologies Corporation LTDA',
-                                brand_name: 'Samsung',
+                                corporate_name:      'Samsung Technologies Corporation LTDA',
+                                brand_name:          'Samsung',
                                 registration_number: '12345678912345',
-                                email: 'atendimento@samsung.com',
-                                phone_number: '8599999999'
+                                email:               'atendimento@samsung.com',
+                                phone_number:        '8599999999'
                           )
 
     ProductModel.create!(
-                        name: 'Notebook',
-                        sku: 'NOTEBOOKSANS-XPTO90',
-                        weight: '1000',
-                        width: '50',
-                        height: '45',
-                        depth:'10',
-                        supplier: supplier
+                          name:     'Notebook',
+                          sku:      'NOTEBOOKSANS-XPTO90',
+                          weight:   '1000',
+                          width:    '50',
+                          height:   '45',
+                          depth:    '10',
+                          supplier: supplier
                       )
 
     ProductModel.create!(
-                        name: 'Smartphone Samsung Galaxy S9',
-                        sku: 'SMARTGALAXY-10929',
-                        weight: '200',
-                        width: '20',
-                        height: '30',
-                        depth:'4',
+                        name:     'Smartphone Samsung Galaxy S9',
+                        sku:      'SMARTGALAXY-10929',
+                        weight:   '200',
+                        width:    '20',
+                        height:   '30',
+                        depth:    '4',
                         supplier: supplier
                       )
     visit root_path 

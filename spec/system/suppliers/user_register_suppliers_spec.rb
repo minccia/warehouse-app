@@ -22,14 +22,14 @@ describe 'Usuário cadastra um fornecedor' do
     click_on 'Fornecedores'
     click_on 'Novo Fornecedor'
 
-    fill_in 'Razão social', with: 'XP Investimentos e Corretoria LTDA'
-    fill_in 'Nome fantasia', with: 'XP Investimentos'
-    fill_in 'CNPJ', with: '12345678912345'
+    fill_in 'Razão social',       with: 'XP Investimentos e Corretoria LTDA'
+    fill_in 'Nome fantasia',      with: 'XP Investimentos'
+    fill_in 'CNPJ',               with: '12345678912345'
     fill_in 'Endereço comercial', with: 'Av. Francisco Sá, 3780 - Carlito Pamplona'
-    fill_in 'Cidade', with: 'Fortaleza'
-    fill_in 'Estado', with: 'CE'
-    fill_in 'Email', with: 'suporte@xpinvestimentos.com'
-    fill_in 'Telefone',with: '8599999999'
+    fill_in 'Cidade',             with: 'Fortaleza'
+    fill_in 'Estado',             with: 'CE'
+    fill_in 'Email',              with: 'suporte@xpinvestimentos.com'
+    fill_in 'Telefone',           with: '8599999999'
 
     click_on 'Enviar'
     
@@ -45,10 +45,10 @@ describe 'Usuário cadastra um fornecedor' do
     click_on 'Fornecedores'
     click_on 'Novo Fornecedor'
 
-    fill_in 'Razão social', with: ''
+    fill_in 'Razão social',  with: ''
     fill_in 'Nome fantasia', with: ''
-    fill_in 'CNPJ', with: ''
-    fill_in 'Email', with: ''
+    fill_in 'CNPJ',          with: ''
+    fill_in 'Email',         with: ''
 
     click_on 'Enviar'
     

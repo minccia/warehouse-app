@@ -9,23 +9,23 @@ describe 'Usuário visita a página inicial' do
 
   it 'e vê os galpões cadastrados' do 
     Warehouse.create!(
-                  name:        'Galpão Guarulhos',
-                  code:        'XLR',
-                  area:        100_000,
-                  city:        'Guarulhos',
-                  address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-                  zip_code:    '07190100',
-                  description: 'É o maior galpão do Brasil!'
+                      name:        'Galpão Guarulhos',
+                      code:        'XLR',
+                      area:        100_000,
+                      city:        'Guarulhos',
+                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
+                      zip_code:    '07190100',
+                      description: 'É o maior galpão do Brasil!'
                 )
 
     Warehouse.create!(
-                  name:        'Galpão Maceió',
-                  code:        'ZNT',
-                  area:        80_000,
-                  city:        'Maceió',
-                  address:      'Rodovia BR 104, Km 91, Tabuleiro do Pinto',
-                  zip_code:    '57100971',
-                  description: 'Destinado para cargas internacionais'
+                      name:        'Galpão Maceió',
+                      code:        'ZNT',
+                      area:        80_000,
+                      city:        'Maceió',
+                      address:     'Rodovia BR 104, Km 91, Tabuleiro do Pinto',
+                      zip_code:    '57100971',
+                      description: 'Destinado para cargas internacionais'
                 )
 
     visit root_path 

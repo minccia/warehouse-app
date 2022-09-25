@@ -7,7 +7,7 @@ describe 'Usuário deleta um galpão' do
                       code:        'XLR',
                       area:        100_000,
                       city:        'Guarulhos',
-                      address:      'Rodovia Hélio Smidt, s/n, Cumbica',
+                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
                       zip_code:    '07190100',
                       description: 'É o maior galpão do Brasil!'
                   )
@@ -26,22 +26,22 @@ describe 'Usuário deleta um galpão' do
 
   it 'e não apaga outros galpões' do 
     Warehouse.create!(
-                        name:        'Galpão Guarulhos',
-                        code:        'XLR',
-                        area:        100_000,
-                        city:        'Guarulhos',
-                        address:      'Rodovia Hélio Smidt, s/n, Cumbica',
-                        zip_code:    '07190100',
-                        description: 'É o maior galpão do Brasil!'
+                      name:        'Galpão Guarulhos',
+                      code:        'XLR',
+                      area:        100_000,
+                      city:        'Guarulhos',
+                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
+                      zip_code:    '07190100',
+                      description: 'É o maior galpão do Brasil!'
                  )
     Warehouse.create!(
-                        name:        'Galpão Natal',
-                        code:        'NTL',
-                        area:        150_000,
-                        city:        'Natal',
-                        address:      'Praia do Amor',
-                        zip_code:    '10010995',
-                        description: 'É um galpão cheio de adesivos de golfinhos'
+                      name:        'Galpão Natal',
+                      code:        'NTL',
+                      area:        150_000,
+                      city:        'Natal',
+                      address:     'Praia do Amor',
+                      zip_code:    '10010995',
+                      description: 'É um galpão cheio de adesivos de golfinhos'
                  )
 
     visit root_path

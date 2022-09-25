@@ -19,13 +19,13 @@ describe 'Usuário registra um galpão' do
     visit root_path 
     click_on 'Novo Galpão'
 
-    fill_in 'Nome', with: 'Galpão Guarulhos'
-    fill_in 'Descrição', with: 'É o maior galpão do Brasil!'
-    fill_in 'Código', with: 'XLR'
-    fill_in 'Área', with: '100000'
-    fill_in 'Cidade', with: 'Guarulhos'
-    fill_in 'Endereço', with: 'Rodovia Hélio Smidt, s/n, Cumbica'
-    fill_in 'CEP', with: '07190100'
+    fill_in 'Nome',       with: 'Galpão Guarulhos'
+    fill_in 'Descrição',  with: 'É o maior galpão do Brasil!'
+    fill_in 'Código',     with: 'XLR'
+    fill_in 'Área',       with: '100000'
+    fill_in 'Cidade',     with: 'Guarulhos'
+    fill_in 'Endereço',   with: 'Rodovia Hélio Smidt, s/n, Cumbica'
+    fill_in 'CEP',        with: '07190100'
     click_on 'Enviar'
 
     expect(current_path).to eq root_path
@@ -39,7 +39,7 @@ describe 'Usuário registra um galpão' do
     visit root_path 
     click_on 'Novo Galpão'
 
-    fill_in 'Nome', with: ''
+    fill_in 'Nome',      with: ''
     fill_in 'Descrição', with: ''
     click_on 'Enviar'
 

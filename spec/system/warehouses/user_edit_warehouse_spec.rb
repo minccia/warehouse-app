@@ -7,7 +7,7 @@ describe 'Usuário edita um galpão' do
                       code:        'XLR',
                       area:        100_000,
                       city:        'Guarulhos',
-                      address:      'Rodovia Hélio Smidt, s/n, Cumbica',
+                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
                       zip_code:    '07190100',
                       description: 'É o maior galpão do Brasil!'
                   )
@@ -17,13 +17,13 @@ describe 'Usuário edita um galpão' do
     click_on 'Editar'
                   
     expect(page).to have_content 'Editar Galpão'
-    expect(page).to have_field 'Nome', with: 'Galpão Guarulhos'
+    expect(page).to have_field 'Nome',      with: 'Galpão Guarulhos'
     expect(page).to have_field 'Descrição', with: 'É o maior galpão do Brasil!'
-    expect(page).to have_field 'Código', with: 'XLR'
-    expect(page).to have_field 'Área', with: 100_000
-    expect(page).to have_field 'Cidade', with: 'Guarulhos'
-    expect(page).to have_field 'Endereço', with: 'Rodovia Hélio Smidt, s/n, Cumbica'
-    expect(page).to have_field 'CEP', with: '07190100'
+    expect(page).to have_field 'Código',    with: 'XLR'
+    expect(page).to have_field 'Área',      with: 100_000
+    expect(page).to have_field 'Cidade',    with: 'Guarulhos'
+    expect(page).to have_field 'Endereço',  with: 'Rodovia Hélio Smidt, s/n, Cumbica'
+    expect(page).to have_field 'CEP',       with: '07190100'
   end
 
   it 'e atualiza o galpão com sucesso' do 
@@ -32,7 +32,7 @@ describe 'Usuário edita um galpão' do
                                   code:        'XLR',
                                   area:        100_000,
                                   city:        'Guarulhos',
-                                  address:      'Rodovia Hélio Smidt, s/n, Cumbica',
+                                  address:     'Rodovia Hélio Smidt, s/n, Cumbica',
                                   zip_code:    '07190100',
                                   description: 'É o maior galpão do Brasil!'
                                )
@@ -41,9 +41,9 @@ describe 'Usuário edita um galpão' do
     click_on 'Galpão Guarulhos'
     click_on 'Editar'
 
-    fill_in 'Nome', with: 'Sapataria Nova'
+    fill_in 'Nome',   with: 'Sapataria Nova'
     fill_in 'Código', with: 'SPN'
-    fill_in 'Área', with: '80000'
+    fill_in 'Área',   with: '80000'
     click_on 'Enviar'
 
     expect(current_path).to eq warehouse_path(warehouse.id)
@@ -59,7 +59,7 @@ describe 'Usuário edita um galpão' do
                       code:        'XLR',
                       area:        100_000,
                       city:        'Guarulhos',
-                      address:      'Rodovia Hélio Smidt, s/n, Cumbica',
+                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
                       zip_code:    '07190100',
                       description: 'É o maior galpão do Brasil!'
                     )
@@ -68,9 +68,9 @@ describe 'Usuário edita um galpão' do
     click_on 'Galpão Guarulhos'
     click_on 'Editar'
 
-    fill_in 'Nome', with: ''
+    fill_in 'Nome',   with: ''
     fill_in 'Código', with: ''
-    fill_in 'Área', with: ''
+    fill_in 'Área',   with: ''
     click_on 'Enviar'
     
     expect(page).to have_content 'Galpão não atualizado'
