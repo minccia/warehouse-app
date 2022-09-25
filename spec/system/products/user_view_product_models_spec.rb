@@ -53,6 +53,6 @@ describe 'Usuário vê os produtos cadastrados' do
     visit root_path 
     click_on 'Modelos de Produtos'
 
-    expect(page).to have_content 'Não há modelos de produtos cadastrados'
+    expect(page).to have_content 'Não há modelos de produtos cadastrados ainda'
   end
 end
