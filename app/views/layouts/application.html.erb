@@ -13,8 +13,9 @@
     <header>
       <h1> <%= "#{ t 'warehouses_and_stock' }" %> </h1>
       <nav>
-        <%= link_to t('buttons.home'), root_path %> 
-        <%= link_to t('suppliers'), suppliers_path %>
+        <%= link_to t('buttons.home'), root_path %> |
+        <%= link_to t('suppliers'), suppliers_path %> |
+        <%= link_to t('product_models'), product_models_path %>
       </nav>
       <section>
         <%= alert %>

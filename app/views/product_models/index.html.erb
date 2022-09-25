@@ -1,0 +1,25 @@
+<article>
+  <header>
+    <h2> <%= t 'product_models' %> </h2>
+  </header>
+  <main>
+    <% @product_models.each do |product| %>
+      <table>
+        <thead>
+          <tr>
+            <th> <%= ProductModel.human_attribute_name 'name' %>
+            <th> <%= ProductModel.human_attribute_name 'sku' %>
+            <th> <%= ProductModel.human_attribute_name 'supplier' %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <%= product.name %> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td> <%= product.sku %> &nbsp;&nbsp;&nbsp;&nbsp; </td>
+            <td> <%= product.supplier.brand_name %>
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </main>
+ </article>

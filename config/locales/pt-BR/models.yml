@@ -23,3 +23,12 @@ pt-BR:
         state: 'Estado'
         email: 'Email'
         phone_number: 'Telefone'
+      product_model:
+        name: 'Nome'
+        sku: 'SKU'
+        weight: 'Peso'
+        width: 'Largura'
+        height: 'Altura'
+        depth: 'Profundidade'
+        supplier: 'Fornecedor'
+        
