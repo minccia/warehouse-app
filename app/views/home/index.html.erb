@@ -1,18 +1,22 @@
 <article>
   <main>
-    <section>
-      <% @warehouses.each do |wh| %>
-        <h3> <%= link_to "#{ wh.name }", warehouse_path(wh.id) %> </h3>
-        <dl>
-          <dt> <%= t 'activerecord.attributes.warehouse.code' %>: </dt>
-          <dd> <%= wh.code %> </dd>
-          <dt> <%= t 'activerecord.attributes.warehouse.area' %>: </dt>
-          <dd> <%= wh.area %> <%= t('square_meters') %> </dd>
-          <dt> <%= t 'activerecord.attributes.warehouse.city' %>: </dt> 
-          <dd> <%= wh.city %> </dd>
-        </dl>
-      <% end %>
-    </section>
+    <% if @warehouses.any? %>
+      <section>
+        <% @warehouses.each do |wh| %>
+          <h3> <%= link_to "#{ wh.name }", warehouse_path(wh.id) %> </h3>
+          <dl>
+            <dt> <%= t 'activerecord.attributes.warehouse.code' %>: </dt>
+            <dd> <%= wh.code %> </dd>
+            <dt> <%= t 'activerecord.attributes.warehouse.area' %>: </dt>
+            <dd> <%= wh.area %> <%= t('square_meters') %> </dd>
+            <dt> <%= t 'activerecord.attributes.warehouse.city' %>: </dt> 
+            <dd> <%= wh.city %> </dd>
+          </dl>
+        <% end %>
+      </section>
+    <% else %>
+      <%= t 'no_warehouses_yet' %>  
+    <% end %>
   </main>
   <footer>
     <ul>
