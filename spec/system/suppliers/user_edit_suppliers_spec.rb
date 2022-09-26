@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Usuário edita um forneceodr' do 
+describe 'Usuário edita um fornecedor' do 
   it 'a partir da página de fornecedores' do
     supplier = Supplier.create!(
                       corporate_name:      'XP Corretora de Investimentos LTDA',
