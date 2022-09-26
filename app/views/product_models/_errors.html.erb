@@ -1,0 +1,8 @@
+<% if @product_model.errors.any?  %>
+  <p> <%= t 'verify_errors_below' %> </p>
+  <% @product_model.errors.each do |error| %>
+    <ul>
+      <li> <%= error.full_message %> </li>
+    </ul>
+  <% end %>
+<% end %>

@@ -29,7 +29,7 @@
       <% if @supplier.product_models.any? %>
         <h3> <%= t 'product_models' %> </h3>
         <% @supplier.product_models.each do |pm| %>
-          <h4> <%= pm.name %> </h4>
+          <h4> <%= link_to pm.name, product_model_path(pm.id) %> </h4>
           <dl>
             <p>
               <dt> <%= ProductModel.human_attribute_name 'sku' %>: </dt>

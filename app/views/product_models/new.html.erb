@@ -1,0 +1,41 @@
+<article>
+  </header>
+    <h2> <%= t 'creating_new_pm' %> </h2>
+    <%= render partial: 'errors' %>
+  </header>
+  <main>
+    <%= form_with model: @product_model do |f| %>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :sku %>
+        <%= f.text_field :sku %>
+      </p>
+      <p>
+        <%= f.label :weight %>
+        <%= f.number_field :weight %>
+      </p>
+      <p>
+        <%= f.label :width %>
+        <%= f.number_field :width %>
+      </p>
+      <p>
+        <%= f.label :height %>
+        <%= f.number_field :height %>
+      </p>
+      <p>
+        <%= f.label :depth %>
+        <%= f.number_field :depth %>
+      </p>
+      <p>
+        <%= f.label :supplier_id %>
+        <%= f.collection_select :supplier_id, Supplier.all, :id, :brand_name, prompt: true %>
+      </p>
+      <p>
+        <%= f.submit t('buttons.send') %>
+      </p>
+    <% end %>
+  </main>
+</article>

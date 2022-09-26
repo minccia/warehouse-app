@@ -58,7 +58,7 @@ describe 'Usuário vê detalhes de um fornecedor' do
 
     ProductModel.create!(
                           name:      'Notebook',
-                          sku:       'NOTEBOOKSANS-XPTO90',
+                          sku:       'NOTEBOOKSANS-XPTO902',
                           weight:    '1000',
                           width:     '50',
                           height:    '45',
@@ -68,7 +68,7 @@ describe 'Usuário vê detalhes de um fornecedor' do
 
     ProductModel.create!(
                           name:     'Smartphone Samsung Galaxy S9',
-                          sku:      'SMARTGALAXY-10929',
+                          sku:      'SMARTGALAXY-10929222',
                           weight:   '200',
                           width:    '20',
                           height:   '30',
@@ -81,9 +81,9 @@ describe 'Usuário vê detalhes de um fornecedor' do
     click_on 'Samsung'
 
     expect(page).to have_content 'Notebook'
-    expect(page).to have_content 'SKU: NOTEBOOKSANS-XPTO90'
+    expect(page).to have_content 'SKU: NOTEBOOKSANS-XPTO902'
     expect(page).to have_content 'Smartphone Samsung Galaxy S9'
-    expect(page).to have_content 'SKU: SMARTGALAXY-10929'
+    expect(page).to have_content 'SKU: SMARTGALAXY-10929222'
   end
 
   it 'e não há modelos de produtos associados a ele' do 

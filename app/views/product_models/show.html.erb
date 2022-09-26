@@ -1,0 +1,27 @@
+<article>
+  <main>
+    <h2> <%= @product_model.name %> </h2>
+    <dl>
+      </p>
+        <dt> <%= ProductModel.human_attribute_name 'sku' %>: </dt>
+        <dd> <%= @product_model.sku %> </dd>
+      </p>
+      </p>
+        <dt> <%= ProductModel.human_attribute_name 'weight' %>: </dt>
+        <dd> <%= @product_model.weight %> <%= t 'grams' %> </dd>
+      </p>
+      </p>
+        <dt> <%= t 'dimension' %>: </dt>
+        <dd>
+          <%= @product_model.height %> X 
+          <%= @product_model.width %> X
+          <%= @product_model.depth %>
+        </dd>
+      </p>
+      </p>
+        <dt> <%= ProductModel.human_attribute_name 'supplier_id' %>: </dt>
+        <dd> <%= link_to @product_model.supplier.brand_name, supplier_path(@product_model.supplier_id) %> </dd>
+      </p>
+    </dl>
+  </main>
+</article>
