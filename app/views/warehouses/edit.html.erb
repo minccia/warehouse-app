@@ -2,7 +2,7 @@
   <header>
     <h2> <%= "#{ t 'edit' } #{ t 'activerecord.models.warehouse' }" %> </h2>
     <section>
-      <%= render partial: 'errors' %>
+      <%= render partial: 'application/errors', locals: { model: @warehouse } %>
     </section>
   </header>
 

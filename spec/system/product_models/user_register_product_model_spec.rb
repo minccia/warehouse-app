@@ -60,7 +60,7 @@ describe 'Usuário registra um modelo de um produto' do
     expect(page).to have_content 'Verifique os erros abaixo:'
     expect(page).to have_content 'Nome não pode ficar em branco'
     expect(page).to have_content 'SKU não pode ficar em branco'
-    expect(page).to have_content 'Supplier é obrigatório(a)'
+    expect(page).to have_content 'Fornecedor é obrigatório(a)'
   end
 
 end

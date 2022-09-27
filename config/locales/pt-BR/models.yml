@@ -32,4 +32,5 @@ pt-BR:
         height: 'Altura'
         depth: 'Profundidade'
         supplier_id: 'Fornecedor'
+        supplier: 'Fornecedor'
         

@@ -17,7 +17,7 @@
             <tr>
               <td> <%= link_to product.name, product_model_path(product.id) %> &nbsp;&nbsp;&nbsp;&nbsp; </td>
               <td> <%= product.sku %> &nbsp;&nbsp;&nbsp;&nbsp; </td>
-              <td> <%= product.supplier.brand_name %>
+              <td> <%= link_to product.supplier.brand_name, supplier_path(product.supplier_id) %>
             </tr>
           </tbody>
         </table>

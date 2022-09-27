@@ -1,8 +1,0 @@
-<% if @warehouse.errors.any?  %>
-  <p> <%= t 'verify_errors_below' %> </p>
-  <% @warehouse.errors.each do |error| %>
-    <ul>
-      <li> <%= error.full_message %> </li>
-    </ul>
-  <% end %>
-<% end %>
