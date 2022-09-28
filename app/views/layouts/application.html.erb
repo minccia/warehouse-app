@@ -16,6 +16,13 @@
         <%= link_to t('buttons.home'), root_path %> |
         <%= link_to t('suppliers'), suppliers_path %> |
         <%= link_to t('product_models'), product_models_path %>
+        <% if user_signed_in? %>
+          <%= "Olá, #{current_user.name}" %>
+          <%= button_to t('buttons.sign_out'), destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to t('buttons.sign_in'), new_user_session_path %>
+        <% end %>
+      
       </nav>
       <section>
         <%= alert %>

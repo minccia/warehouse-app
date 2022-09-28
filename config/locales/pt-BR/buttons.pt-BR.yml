@@ -6,3 +6,6 @@ pt-BR:
     edit: 'Editar'
     send: 'Enviar'
     delete: 'Deletar'
+    sign_in: 'Fazer Login'
+    login: 'Entrar'
+    sign_out: 'Sair'

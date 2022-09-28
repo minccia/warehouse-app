@@ -33,4 +33,8 @@ pt-BR:
         depth: 'Profundidade'
         supplier_id: 'Fornecedor'
         supplier: 'Fornecedor'
-        
+      user:
+        name: 'Nome'
+        email: 'Email'
+        password: 'Senha'
+        remember_me: 'Lembre-se de mim'
