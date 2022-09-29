@@ -2,7 +2,21 @@ require 'rails_helper'
 
 describe 'Usuário registra um modelo de um produto' do 
   it 'a partir de um formulário' do 
-    visit root_path
+    User.create!(
+                  name: 'Paola Dobrotto',
+                  email: 'paola@email.com',
+                  password: 'password'
+                )
+    
+    visit root_path 
+    click_on 'Fazer Login'
+
+    within 'form' do
+      fill_in 'Email', with: 'paola@email.com' 
+      fill_in 'Senha', with: 'password'
+      click_on 'Entrar'
+    end
+
     click_on 'Modelos de Produtos'
     click_on 'Novo Modelo de produto'
 
@@ -19,6 +33,12 @@ describe 'Usuário registra um modelo de um produto' do
   end
 
   it 'com sucesso' do 
+    User.create!(
+                  name: 'Paola Dobrotto',
+                  email: 'paola@email.com',
+                  password: 'password'
+            )
+
     supplier = Supplier.create!(
                                 corporate_name:      'Samsung Technologies Corporation LTDA',
                                 brand_name:          'Samsung',
@@ -27,7 +47,15 @@ describe 'Usuário registra um modelo de um produto' do
                                 phone_number:        '8599999999'
                           )
 
-    visit root_path
+    visit root_path 
+    click_on 'Fazer Login'
+
+    within 'form' do
+      fill_in 'Email', with: 'paola@email.com' 
+      fill_in 'Senha', with: 'password'
+      click_on 'Entrar'
+    end
+
     click_on 'Modelos de Produtos'
     click_on 'Novo Modelo de produto'
 
@@ -47,7 +75,21 @@ describe 'Usuário registra um modelo de um produto' do
   end
 
   it 'e não preenche todos os campos' do 
-    visit root_path
+    User.create!(
+                  name: 'Paola Dobrotto',
+                  email: 'paola@email.com',
+                  password: 'password'
+                )
+    
+    visit root_path 
+    click_on 'Fazer Login'
+
+    within 'form' do
+      fill_in 'Email', with: 'paola@email.com' 
+      fill_in 'Senha', with: 'password'
+      click_on 'Entrar'
+    end
+    
     click_on 'Modelos de Produtos'
     click_on 'Novo Modelo de produto'
 

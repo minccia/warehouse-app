@@ -2,6 +2,12 @@ require 'rails_helper'
 
 describe 'Usuário vê detalhes de um modelo de produto' do 
   it 'e vê informações adicionais' do 
+    User.create!(
+                  name: 'Paola Dobrotto',
+                  email: 'paola@email.com',
+                  password: 'password'
+               )
+
     supplier = Supplier.create!(
                                 corporate_name:      'Samsung Technologies Corporation LTDA',
                                 brand_name:          'Samsung',
@@ -20,7 +26,15 @@ describe 'Usuário vê detalhes de um modelo de produto' do
                               supplier: supplier
                       )
 
-    visit root_path
+    visit root_path 
+    click_on 'Fazer Login'
+
+    within 'form' do
+      fill_in 'Email', with: 'paola@email.com' 
+      fill_in 'Senha', with: 'password'
+      click_on 'Entrar'
+    end
+
     click_on 'Modelos de Produtos'
     click_on 'Notebook'
 

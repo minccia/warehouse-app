@@ -1,8 +1,32 @@
 require 'rails_helper' 
 
 describe 'Usuário vê os produtos cadastrados' do 
-  it 'a partir da barra de nevagação' do 
+  it 'se estiver autentadicado' do 
+    visit root_path
+
+    within 'nav' do 
+      click_on 'Modelos de Produtos'
+    end
+
+    expect(current_path).to eq new_user_session_path
+  end
+
+  it 'a partir da barra de navegação' do 
+    User.create!(
+                  name: 'Paola Dobrotto',
+                  email: 'paola@email.com',
+                  password: 'password'
+                )
+    
     visit root_path 
+    click_on 'Fazer Login'
+
+    within 'form' do
+      fill_in 'Email', with: 'paola@email.com' 
+      fill_in 'Senha', with: 'password'
+      click_on 'Entrar'
+    end
+
     within 'nav' do
       click_on 'Modelos de Produtos'
     end
@@ -11,6 +35,12 @@ describe 'Usuário vê os produtos cadastrados' do
   end
 
   it 'com sucesso' do 
+    User.create!(
+                  name: 'Paola Dobrotto',
+                  email: 'paola@email.com',
+                  password: 'password'
+                )
+
     supplier = Supplier.create!(
                                 corporate_name:      'Samsung Technologies Corporation LTDA',
                                 brand_name:          'Samsung',
@@ -38,7 +68,16 @@ describe 'Usuário vê os produtos cadastrados' do
                         depth:    '4',
                         supplier: supplier
                       )
+
     visit root_path 
+    click_on 'Fazer Login'
+
+    within 'form' do
+      fill_in 'Email', with: 'paola@email.com' 
+      fill_in 'Senha', with: 'password'
+      click_on 'Entrar'
+    end
+    
     click_on 'Modelos de Produtos'
 
     expect(page).to have_content 'Notebook'
@@ -50,6 +89,21 @@ describe 'Usuário vê os produtos cadastrados' do
   end
 
   it 'e não há modelos de produtos cadastrados' do 
+    User.create!(
+                  name: 'Paola Dobrotto',
+                  email: 'paola@email.com',
+                  password: 'password'
+                )
+    
+    visit root_path 
+    click_on 'Fazer Login'
+
+    within 'form' do
+      fill_in 'Email', with: 'paola@email.com' 
+      fill_in 'Senha', with: 'password'
+      click_on 'Entrar'
+    end
+    
     visit root_path 
     click_on 'Modelos de Produtos'
 
