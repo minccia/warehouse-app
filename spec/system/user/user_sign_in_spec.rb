@@ -42,7 +42,7 @@ describe 'Usuário se autentica' do
       click_on 'Sair'
     end
 
-    expect(page).to have_content 'Logout efetuado com sucesso'
+    expect(page).to have_content 'Fazer Login Para continuar, faça login ou registre-se'
     expect(page).not_to have_button 'Sair'
     expect(page).to have_link 'Fazer Login'
     expect(page).not_to have_content 'Olá, Paola Dobrotto'

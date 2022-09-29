@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 describe 'Usuário visita a página inicial' do 
-  it 'e vê o nome da app' do 
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
+
+  it 'e vê o nome da app' do
+    login_as user, scope: :user
     visit root_path 
 
     expect(page).to have_content 'Galpões & Estoque'
@@ -28,6 +31,7 @@ describe 'Usuário visita a página inicial' do
                       description: 'Destinado para cargas internacionais'
                 )
 
+    login_as user, scope: :user
     visit root_path 
 
     expect(page).not_to have_content 'Não há galpões cadastrados ainda'
@@ -43,6 +47,7 @@ describe 'Usuário visita a página inicial' do
   end
 
   it 'e não há galpões cadastrados' do 
+    login_as user, scope: :user
     visit root_path 
 
     expect(page).to have_content 'Não há galpões cadastrados ainda'
