@@ -1,7 +1,9 @@
 require 'rails_helper' 
 
 describe 'Usuário vê os produtos cadastrados' do 
-  it 'se estiver autentadicado' do 
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
+
+  it 'se estiver autenticado' do 
     visit root_path
 
     within 'nav' do 
@@ -12,20 +14,8 @@ describe 'Usuário vê os produtos cadastrados' do
   end
 
   it 'a partir da barra de navegação' do 
-    User.create!(
-                  name: 'Paola Dobrotto',
-                  email: 'paola@email.com',
-                  password: 'password'
-                )
-    
+    login_as user, scope: :user
     visit root_path 
-    click_on 'Fazer Login'
-
-    within 'form' do
-      fill_in 'Email', with: 'paola@email.com' 
-      fill_in 'Senha', with: 'password'
-      click_on 'Entrar'
-    end
 
     within 'nav' do
       click_on 'Modelos de Produtos'
@@ -35,12 +25,6 @@ describe 'Usuário vê os produtos cadastrados' do
   end
 
   it 'com sucesso' do 
-    User.create!(
-                  name: 'Paola Dobrotto',
-                  email: 'paola@email.com',
-                  password: 'password'
-                )
-
     supplier = Supplier.create!(
                                 corporate_name:      'Samsung Technologies Corporation LTDA',
                                 brand_name:          'Samsung',
@@ -69,14 +53,8 @@ describe 'Usuário vê os produtos cadastrados' do
                         supplier: supplier
                       )
 
+    login_as user, scope: :user
     visit root_path 
-    click_on 'Fazer Login'
-
-    within 'form' do
-      fill_in 'Email', with: 'paola@email.com' 
-      fill_in 'Senha', with: 'password'
-      click_on 'Entrar'
-    end
     
     click_on 'Modelos de Produtos'
 
@@ -89,21 +67,8 @@ describe 'Usuário vê os produtos cadastrados' do
   end
 
   it 'e não há modelos de produtos cadastrados' do 
-    User.create!(
-                  name: 'Paola Dobrotto',
-                  email: 'paola@email.com',
-                  password: 'password'
-                )
-    
+    login_as user, scope: :user
     visit root_path 
-    click_on 'Fazer Login'
-
-    within 'form' do
-      fill_in 'Email', with: 'paola@email.com' 
-      fill_in 'Senha', with: 'password'
-      click_on 'Entrar'
-    end
-    
     visit root_path 
     click_on 'Modelos de Produtos'
 
