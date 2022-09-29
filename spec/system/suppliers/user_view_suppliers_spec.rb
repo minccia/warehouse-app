@@ -3,6 +3,16 @@ require 'rails_helper'
 describe 'Usuário vê os fornecedores' do 
   let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
 
+  it 'se estiver autenticado' do 
+    visit root_path
+
+    within 'nav' do 
+      click_on 'Fornecedores'
+    end
+
+    expect(current_path).to eq new_user_session_path
+  end
+
   it 'a partir do menu' do
     login_as user, scope: :user
     visit root_path
