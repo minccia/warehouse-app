@@ -1,5 +1,7 @@
 class SuppliersController < ApplicationController
+  before_action :authenticate_user!
   before_action :fetch_supplier, only: %i[show edit update]
+
   def index 
     @suppliers = Supplier.all
   end

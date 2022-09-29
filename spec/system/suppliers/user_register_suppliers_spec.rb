@@ -1,7 +1,10 @@
 require 'rails_helper' 
 
 describe 'Usuário cadastra um fornecedor' do 
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
+
   it 'a partir do formulário' do 
+    login_as user, scope: :user
     visit root_path
     click_on 'Fornecedores'
     click_on 'Novo Fornecedor'
@@ -18,9 +21,8 @@ describe 'Usuário cadastra um fornecedor' do
   end
 
   it 'com sucesso' do 
-    visit root_path
-    click_on 'Fornecedores'
-    click_on 'Novo Fornecedor'
+    login_as user, scope: :user
+    visit new_supplier_path 
 
     fill_in 'Razão social',       with: 'XP Investimentos e Corretoria LTDA'
     fill_in 'Nome fantasia',      with: 'XP Investimentos'
@@ -41,9 +43,8 @@ describe 'Usuário cadastra um fornecedor' do
   end
 
   it 'e não preenche todos os campos' do 
-    visit root_path
-    click_on 'Fornecedores'
-    click_on 'Novo Fornecedor'
+    login_as user, scope: :user
+    visit new_supplier_path
 
     fill_in 'Razão social',  with: ''
     fill_in 'Nome fantasia', with: ''

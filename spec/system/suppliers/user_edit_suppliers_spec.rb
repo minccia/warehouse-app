@@ -1,18 +1,21 @@
 require 'rails_helper'
 
 describe 'Usuário edita um fornecedor' do 
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
+
   it 'a partir da página de fornecedores' do
     supplier = Supplier.create!(
-                      corporate_name:      'XP Corretora de Investimentos LTDA',
-                      brand_name:          'XP Investimentos',
-                      registration_number: '43281298398422',
-                      full_address:        'Av. Das Palmas, 100',
-                      city:                'Guarulhos',
-                      state:               'SP',
-                      email:               'contato@xpcorretora.com',
-                      phone_number:        '8599999999'
+                                corporate_name:      'XP Corretora de Investimentos LTDA',
+                                brand_name:          'XP Investimentos',
+                                registration_number: '43281298398422',
+                                full_address:        'Av. Das Palmas, 100',
+                                city:                'Guarulhos',
+                                state:               'SP',
+                                email:               'contato@xpcorretora.com',
+                                phone_number:        '8599999999'
                 )
 
+    login_as user, scope: :user
     visit root_path 
     click_on 'Fornecedores'
     click_on 'XP Investimentos'
@@ -29,22 +32,20 @@ describe 'Usuário edita um fornecedor' do
   end
 
   it 'com sucesso' do
-    Supplier.create!(
-                      corporate_name:      'XP Corretora de Investimentos LTDA',
-                      brand_name:          'XP Investimentos',
-                      registration_number: '43281298398422',
-                      full_address:        'Av. Das Palmas, 100',
-                      city:                'Guarulhos',
-                      state:               'SP',
-                      email:               'contato@xpcorretora.com',
-                      phone_number:        '8599999999'
-                )
+    supplier = Supplier.create!(
+                                corporate_name:      'XP Corretora de Investimentos LTDA',
+                                brand_name:          'XP Investimentos',
+                                registration_number: '43281298398422',
+                                full_address:        'Av. Das Palmas, 100',
+                                city:                'Guarulhos',
+                                state:               'SP',
+                                email:               'contato@xpcorretora.com',
+                                phone_number:        '8599999999'
+    ) 
 
-    visit root_path 
-    click_on 'Fornecedores'
-    click_on 'XP Investimentos'
-    click_on 'Editar Fornecedor'
-
+    login_as user, scope: :user
+    visit edit_supplier_path(supplier.id)
+ 
     fill_in 'Nome fantasia',  with: 'Chululu Brinquedos'
     fill_in 'Cidade',         with: 'Suzano'
     fill_in 'Email',          with: 'contato@chululubrinquedos.com'
@@ -68,10 +69,8 @@ describe 'Usuário edita um fornecedor' do
                       phone_number:        '8599999999'
                     ) 
 
-    visit root_path 
-    click_on 'Fornecedores'
-    click_on 'XP Investimentos'
-    click_on 'Editar Fornecedor'
+    login_as user, scope: :user
+    visit edit_supplier_path(supplier.id)
 
     fill_in 'Razão social',  with: ''
     fill_in 'Nome fantasia', with: ''

@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe 'Usuário vê detalhes de um fornecedor' do 
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
+
   it 'e vê informações adicionais' do 
     supplier =  Supplier.create!(
                             corporate_name:      'XP Corretora de Investimentos LTDA',
@@ -13,6 +15,7 @@ describe 'Usuário vê detalhes de um fornecedor' do
                             phone_number:        '8599999999'
                               )
    
+    login_as user, scope: :user
     visit root_path 
     click_on 'Fornecedores'
     click_on 'XP Investimentos'
@@ -39,9 +42,8 @@ describe 'Usuário vê detalhes de um fornecedor' do
                             phone_number:        '8599999999'
                               )
    
-    visit root_path 
-    click_on 'Fornecedores'
-    click_on 'XP Investimentos'
+    login_as user, scope: :user
+    visit supplier_path(supplier.id)
     click_on 'Início'
 
     expect(current_path).to eq root_path
@@ -75,10 +77,9 @@ describe 'Usuário vê detalhes de um fornecedor' do
                           depth:    '4',
                           supplier: supplier
                       )
-   
-    visit root_path 
-    click_on 'Fornecedores'
-    click_on 'Samsung'
+    
+    login_as user, scope: :user
+    visit supplier_path(supplier.id)
 
     expect(page).to have_content 'Notebook'
     expect(page).to have_content 'SKU: NOTEBOOKSANS-XPTO902'
@@ -87,7 +88,7 @@ describe 'Usuário vê detalhes de um fornecedor' do
   end
 
   it 'e não há modelos de produtos associados a ele' do 
-    Supplier.create!(
+    supplier = Supplier.create!(
                       corporate_name:      'Samsung Technologies Corporation LTDA',
                       brand_name:          'Samsung',
                       registration_number: '12345678912345',
@@ -95,9 +96,8 @@ describe 'Usuário vê detalhes de um fornecedor' do
                       phone_number:        '8599999999'
                    )
 
-    visit root_path 
-    click_on 'Fornecedores'
-    click_on 'Samsung'
+    login_as user, scope: :user
+    visit supplier_path(supplier.id)
 
     expect(page).to have_content 'Este fornecedor ainda não possui modelos de produtos'
   end

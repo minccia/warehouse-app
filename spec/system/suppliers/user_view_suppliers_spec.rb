@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 describe 'Usuário vê os fornecedores' do 
-  it 'a partir do menu' do 
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
+
+  it 'a partir do menu' do
+    login_as user, scope: :user
     visit root_path
+
     within 'nav' do 
       click_on 'Fornecedores'
     end
@@ -34,8 +38,8 @@ describe 'Usuário vê os fornecedores' do
                       phone_number:        '8599999999'
                 )
 
-    visit root_path 
-    click_on 'Fornecedores'
+    login_as user, scope: :user
+    visit suppliers_path
 
     expect(page).to have_content 'XP Investimentos'
     expect(page).to have_content 'Guarulhos - SP'
@@ -46,8 +50,8 @@ describe 'Usuário vê os fornecedores' do
   end
 
   it 'e não há fornecedores cadastrados' do 
-    visit root_path
-    click_on 'Fornecedores'
+    login_as user, scope: :user
+    visit suppliers_path
 
     expect(page).to have_content 'Não há fornecedores cadastrados ainda'
   end
