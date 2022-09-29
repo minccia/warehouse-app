@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe 'Usuário vê detalhes de um galpão' do 
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
+
   it 'e vê informações adicionais' do  
     Warehouse.create!(
                       name:        'Galpão Guarulhos',
@@ -11,7 +13,8 @@ describe 'Usuário vê detalhes de um galpão' do
                       zip_code:    '07197100',
                       description: 'É o maior galpão do Brasil!'
       )
-
+    
+    login_as user, scope: :user
     visit root_path 
     click_on 'Galpão Guarulhos'
 
@@ -25,19 +28,20 @@ describe 'Usuário vê detalhes de um galpão' do
   end
 
   it 'e retorna pra tela incial' do 
-    Warehouse.create!(
-                      name:        'Galpão Guarulhos',
-                      code:        'XLR',
-                      area:        100_000,
-                      city:        'Guarulhos',
-                      address:     'Rodovia Hélio Smidt, s/n, Cumbica',
-                      zip_code:    '07190100',
-                      description: 'É o maior galpão do Brasil!'
-    )
+    wh = Warehouse.create!(
+                            name:        'Galpão Guarulhos',
+                            code:        'XLR',
+                            area:        100_000,
+                            city:        'Guarulhos',
+                            address:     'Rodovia Hélio Smidt, s/n, Cumbica',
+                            zip_code:    '07190100',
+                            description: 'É o maior galpão do Brasil!'
+                      )
 
-    visit root_path 
-    click_on 'Galpão Guarulhos'
+    login_as user, scope: :user
+    visit warehouse_path(wh.id)
     click_on 'Início'
+    
     expect(current_path).to eq root_path
   end
 end

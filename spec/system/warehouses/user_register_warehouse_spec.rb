@@ -1,23 +1,26 @@
 require 'rails_helper'
 
 describe 'Usuário registra um galpão' do 
-  it 'a partir da tela inicial' do
-     visit root_path 
-     click_on 'Novo Galpão'
+  let(:user) { User.create!(name: 'Paola Dobrotto', email: 'paola@email.com', password: 'password') }
 
-     expect(page).to have_content 'Novo Galpão'
-     expect(page).to have_field 'Nome'
-     expect(page).to have_field 'Descrição'
-     expect(page).to have_field 'Código'
-     expect(page).to have_field 'Área'
-     expect(page).to have_field 'Cidade'
-     expect(page).to have_field 'Endereço'
-     expect(page).to have_field 'CEP'
+  it 'a partir da tela inicial' do
+    login_as user, scope: :user
+    visit root_path 
+    click_on 'Novo Galpão'
+
+    expect(page).to have_content 'Novo Galpão'
+    expect(page).to have_field 'Nome'
+    expect(page).to have_field 'Descrição'
+    expect(page).to have_field 'Código'
+    expect(page).to have_field 'Área'
+    expect(page).to have_field 'Cidade'
+    expect(page).to have_field 'Endereço'
+    expect(page).to have_field 'CEP'
   end
 
   it 'com sucesso' do 
-    visit root_path 
-    click_on 'Novo Galpão'
+    login_as user, scope: :user
+    visit new_warehouse_path
 
     fill_in 'Nome',       with: 'Galpão Guarulhos'
     fill_in 'Descrição',  with: 'É o maior galpão do Brasil!'
@@ -36,8 +39,8 @@ describe 'Usuário registra um galpão' do
   end
 
   it 'e não preenche todos os campos' do 
-    visit root_path 
-    click_on 'Novo Galpão'
+    login_as user, scope: :user 
+    visit new_warehouse_path
 
     fill_in 'Nome',      with: ''
     fill_in 'Descrição', with: ''
