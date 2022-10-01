@@ -1,0 +1,23 @@
+<article>
+  <main>
+    <h2> Informações do pedido </h2>
+    <dl>
+      <p>
+        <dt> <%= Order.human_attribute_name 'warehouse_id' %>: </dt>
+        <dd> <%= @order.warehouse.full_description %>
+      </p>
+      <p>
+        <dt> <%= Order.human_attribute_name 'supplier_id' %>: </dt>
+        <dd> <%= @order.supplier.full_description %> </dd>
+      </p>
+      <p>
+        <dt> <%= Order.human_attribute_name 'user' %>: </dt>
+        <dd> <%= @order.user.description %> </dd>
+      </p>
+      <p>
+        <dt> <%= Order.human_attribute_name 'estimated_delivery_date' %>: </dt>
+        <dd> <%= l @order.estimated_delivery_date %>
+      </p>
+    </dl>
+  </main>
+</article>

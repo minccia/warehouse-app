@@ -23,3 +23,4 @@ pt-BR:
   no_suppliers_registered: 'Não há fornecedores cadastrados ainda'
   no_product_models_registered: 'Não há modelos de produtos cadastrados ainda'
   supplier_dont_have_product_models: 'Este fornecedor ainda não possui modelos de produtos'
+  registering_order_not_possible_no_warehouses_no_suppliers: 'Não é possível registrar um pedido, não há galpões ou fornecedores'

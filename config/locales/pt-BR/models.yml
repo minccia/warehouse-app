@@ -5,6 +5,7 @@ pt-BR:
       warehouse: 'Galpão'
       supplier: 'Fornecedor'
       product_model: 'Modelo de produto'
+      order: 'Pedido'
     
     attributes:
       warehouse:
@@ -38,3 +39,10 @@ pt-BR:
         email: 'Email'
         password: 'Senha'
         remember_me: 'Lembre-se de mim'
+      order:
+        warehouse_id: 'Galpão Destino'
+        warehouse: 'Galpão Destino'
+        supplier_id: 'Fornecedor'
+        supplier: 'Fornecedor'
+        user: 'Usuário responsável'
+        estimated_delivery_date: 'Data prevista de entrega'

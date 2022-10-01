@@ -11,18 +11,20 @@
 
   <body>
     <header>
-      <h1> <%= "#{ t 'warehouses_and_stock' }" %> </h1>
+      <%= link_to root_path do %>
+        <h1> <%= "#{ t 'warehouses_and_stock' }" %> </h1>
+      <% end %>
       <nav>
         <%= link_to t('buttons.home'), root_path %> |
         <%= link_to t('suppliers'), suppliers_path %> |
-        <%= link_to t('product_models'), product_models_path %>
+        <%= link_to t('product_models'), product_models_path %> |
+        <%= link_to 'Novo Pedido', new_order_path %>
         <% if user_signed_in? %>
-          <%= "Olá, #{current_user.name}" %>
+          <%= "Olá, #{current_user.description}" %>
           <%= button_to t('buttons.sign_out'), destroy_user_session_path, method: :delete %>
         <% else %>
           <%= link_to t('buttons.sign_in'), new_user_session_path %>
         <% end %>
-      
       </nav>
       <section>
         <%= alert %>
