@@ -50,6 +50,8 @@ describe 'Usuário cria um novo pedido' do
                       phone_number:        '8599999999'
                 )
 
+    allow(SecureRandom).to receive(:alphanumeric).with(10).and_return('ABC1234567')
+
     login_as user, scope: :user
     visit root_path 
     within 'nav' do 
@@ -62,6 +64,7 @@ describe 'Usuário cria um novo pedido' do
     click_on 'Enviar'
 
     expect(page).to have_content 'Pedido criado com sucesso'
+    expect(page).to have_content 'Pedido ABC1234567'
     expect(page).to have_content 'Galpão Destino: XLR - Galpão Guarulhos'
     expect(page).to have_content 'Fornecedor: Samsung - Samsung Technologies Corporation LTDA | 12.345.678/9123-45'
     expect(page).to have_content 'Data prevista de entrega: 20/12/2022'

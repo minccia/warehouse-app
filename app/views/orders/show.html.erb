@@ -1,6 +1,6 @@
 <article>
   <main>
-    <h2> Informações do pedido </h2>
+    <h2> <%= Order.model_name.human %> <%= @order.code %> </h2>
     <dl>
       <p>
         <dt> <%= Order.human_attribute_name 'warehouse_id' %>: </dt>
