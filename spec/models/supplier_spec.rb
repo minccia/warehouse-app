@@ -187,4 +187,14 @@ RSpec.describe Supplier, type: :model do
     end
 
   end
+
+  describe '#full_description' do 
+    it 'exibe o nome fantasia, a razão social e o CNPJ' do 
+      supplier = Supplier.new(corporate_name: 'Samsung Technologies LTDA',
+                              brand_name: 'Samsung',
+                              registration_number: '12345678912345')
+  
+      expect(supplier.full_description).to eq 'Samsung - Samsung Technologies LTDA | 12.345.678/9123-45' 
+    end
+  end
 end

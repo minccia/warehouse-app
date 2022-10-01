@@ -7,12 +7,15 @@ class Supplier < ApplicationRecord
   validates :email, { format: /\A\S+@.+\.\S+\z/ }
 
   def formatted_registration_number
-    CNPJ.new(self.registration_number).formatted
+    CNPJ.new(registration_number).formatted
   end
 
   def formatted_phone_number
-    ddd = self.phone_number[0..1]
-    "(#{ddd}) #{self.phone_number[2..5]}-#{self.phone_number[6..9]}"
+    ddd = phone_number[0..1]
+    "(#{ddd}) #{phone_number[2..5]}-#{phone_number[6..9]}"
   end
 
+  def full_description
+    "#{brand_name} - #{corporate_name} | #{formatted_registration_number}"
+  end
 end
