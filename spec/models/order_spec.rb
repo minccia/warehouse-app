@@ -4,7 +4,7 @@ RSpec.describe Order, type: :model do
   context 'When creating a new order' do 
     subject(:order) do
       Order.new(warehouse_id: '3', supplier_id: '2',
-                user_id: '1', estimated_delivery_date: '2022-02-20'
+                user_id: '1', estimated_delivery_date: '2054-02-20'
               )
     end
   
@@ -33,6 +33,11 @@ RSpec.describe Order, type: :model do
         order.code = nil 
         expect(order).not_to be_valid
       end
+
+      it 'false when estimated delivery date is not a future date' do
+        order.estimated_delivery_date = '1562-09-01'
+        expect(order).not_to be_valid
+      end 
     end
 
     describe 'generate a random code' do 
@@ -62,7 +67,7 @@ RSpec.describe Order, type: :model do
                            password: '32823144')
         
         order = Order.new(user: user, warehouse: warehouse, 
-                          supplier: supplier, estimated_delivery_date: '2022-10-01')  
+                          supplier: supplier, estimated_delivery_date: '2054-10-01')  
         
         order.save!
         expect(order.code).not_to be_empty
@@ -95,10 +100,10 @@ RSpec.describe Order, type: :model do
                            password: '32823144')
         
         first_order = Order.create!(user: user, warehouse: warehouse, 
-                          supplier: supplier, estimated_delivery_date: '2022-10-01')  
+                          supplier: supplier, estimated_delivery_date: '2054-10-01')  
         
         second_order = Order.new(user: user, warehouse: warehouse, 
-                                 supplier: supplier, estimated_delivery_date: '2022-05-03') 
+                                 supplier: supplier, estimated_delivery_date: '2058-05-03') 
 
         second_order.save!
         expect(second_order.code).not_to be_eql first_order.code

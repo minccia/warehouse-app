@@ -15,7 +15,7 @@
         </p>
         <p>
           <%= f.label :estimated_delivery_date %>
-          <%= f.date_field :estimated_delivery_date %>
+          <%= f.date_field :estimated_delivery_date, min: Date.today %>
         </p>
         <p>
           <%= f.submit t('buttons.send') %>

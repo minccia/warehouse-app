@@ -84,6 +84,9 @@ GEM
     concurrent-ruby (1.1.10)
     cpf_cnpj (0.5.0)
     crass (1.0.6)
+    date_validator (0.12.0)
+      activemodel (>= 3)
+      activesupport (>= 3)
     debug (1.6.2)
       irb (>= 1.3.6)
       reline (>= 0.3.1)
@@ -222,6 +225,7 @@ DEPENDENCIES
   byebug
   capybara
   cpf_cnpj
+  date_validator
   debug
   devise
   puma (~> 5.0)
