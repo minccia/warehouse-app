@@ -22,6 +22,13 @@ class OrdersController < ApplicationController
 
   private
     
+    def ensure_user_is_the_same_as_creator
+      unless @order.user == current_user
+        flash.notice = "#{ t 'no_permission_to_edit' }"
+        return redirect_to orders_path
+      end
+    end
+
     def new_order_params
       params.require(:order).permit(
         :warehouse_id, :supplier_id, :user_id,

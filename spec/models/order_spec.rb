@@ -35,9 +35,21 @@ RSpec.describe Order, type: :model do
       end
 
       it 'false when estimated delivery date is not a future date' do
-        order.estimated_delivery_date = '1562-09-01'
+        order.estimated_delivery_date = 1.day.ago
         expect(order).not_to be_valid
       end 
+
+      it 'false when estimated delivery date is equal to today' do 
+        order.estimated_delivery_date = Date.today 
+
+        expect(order).not_to be_valid 
+      end
+
+      it 'true when estimated delivery date is greater than today' do 
+        order.estimated_delivery_date = 1.day.from_now 
+
+        expect(order).not_to be_valid 
+      end
     end
 
     describe 'generate a random code' do 
@@ -121,5 +133,7 @@ RSpec.describe Order, type: :model do
       end
     end
   end
+
+
 
 end
